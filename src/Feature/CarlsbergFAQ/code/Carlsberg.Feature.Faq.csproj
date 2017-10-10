@@ -128,14 +128,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Web.config" />
-    <Content Include="Views\Faq\FaqOverviewPage.cshtml" />
+    <Content Include="Views\CarlsbergFAQ\FaqOverviewPage.cshtml" />
     <Content Include="packages.config">
       <SubType>Designer</SubType>
     </Content>
     <Content Include="ls.pubignore.wpp.targets" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />
-    <Content Include="Views\Faq\FaqCategoryPage.cshtml" />
-    <Content Include="Views\Faq\FaqOverview.cshtml" />
+    <Content Include="Views\CarlsbergFAQ\FaqCategoryPage.cshtml" />
+    <Content Include="Views\CarlsbergFAQ\FaqOverview.cshtml" />
     <Content Include="publish.ignore" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
