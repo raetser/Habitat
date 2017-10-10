@@ -1,0 +1,39 @@
+﻿@using Glass.Mapper.Sc.Web.Mvc
+@using Sitecore.Mvc
+@using Carlsberg.Foundation.Dictionary.Repositories
+@inherits System.Web.Mvc.WebViewPage<Carlsberg.Feature.Faq.Models.FaqOverviewModel>
+
+<section class="introduction homepage-block">
+
+    @Html.Sitecore().Placeholder("breadcrumb")
+
+    <h1 class="introduction-title">@Html.Glass().Editable(model => model.FaqOverview.Title)</h1>
+    <p class="introduction-text">
+        @Html.Glass().Editable(model => model.FaqOverview.Description)
+    </p>
+</section>
+<section class="category__collection-wrapper homepage-block">
+    @if (Sitecore.Context.PageMode.IsExperienceEditor)
+    {
+        <p>[To add more categories, click on the "Insert new item" button for this component]</p>
+    }
+    @foreach (var category in Model.FaqOverview.FaqCategories)
+    {
+        using (Html.Glass().BeginEditFrame(category, "Questions and Answers", m => m.QuestionsAnswers))
+        {
+            var questions = category.QuestionsAnswers.ToArray();
+
+            <section class="category__collection js-faq-category" data-category="@category.Title">
+                <h2 class="category__collection-title">@category.Title</h2>
+
+                @for (int i = 0; i < Math.Min(category.QuestionsAnswers.Count(), 5); i++)
+                    {
+                        var question = questions[i].Question;
+                    <a href="@(category.Url)#qa@(i + 1)" class="category__collection-link js-faq-question-link" data-question="@question">@question</a>
+                }
+
+                <a href="@category.Url" class="cta__button cta__button--inverted">@DictionaryPhraseRepository.Current.Get("/Faq/ViewAll", "View all")</a>
+            </section>
+        }
+    }
+</section>

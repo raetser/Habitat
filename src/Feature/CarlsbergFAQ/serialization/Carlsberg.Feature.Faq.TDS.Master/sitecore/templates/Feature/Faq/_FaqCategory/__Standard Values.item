@@ -1,0 +1,66 @@
+----item----
+version: 1
+id: {0CB1F5A0-3177-444F-B807-3C20F9BCE7A8}
+database: master
+path: /sitecore/templates/Feature/Faq/_FaqCategory/__Standard Values
+parent: {6119D355-1BD5-40DE-94C2-34C9412ACC70}
+name: __Standard Values
+master: {00000000-0000-0000-0000-000000000000}
+template: {6119D355-1BD5-40DE-94C2-34C9412ACC70}
+templatekey: _FaqCategory
+created: 20170228T090104Z
+
+----version----
+language: en
+version: 1
+revision: 89f646b3-1711-431e-91e2-284a4349e638
+
+----field----
+field: {FA158C5A-758C-4D8D-A6B6-031E38A017F1}
+name: Title
+key: title
+content-length: 5
+
+$name
+----field----
+field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
+name: __Owner
+key: __owner
+content-length: 21
+
+sitecore\supportBruno
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20170228T090104Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 21
+
+sitecore\supportBruno
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+89f646b3-1711-431e-91e2-284a4349e638
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20170228T090113Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 21
+
+sitecore\supportBruno

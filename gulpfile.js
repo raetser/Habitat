@@ -12,6 +12,7 @@ var yargs = require("yargs").argv;
 var unicorn = require("./scripts/unicorn.js");
 var habitat = require("./scripts/habitat.js");
 var helix = require("./scripts/helix.js");
+var minimist = require("minimist");
 
 var config;
 if (fs.existsSync('./gulp-config.js.user')) {
@@ -20,6 +21,12 @@ if (fs.existsSync('./gulp-config.js.user')) {
 else {
     config = require("./gulp-config.js")()
 }
+
+var knownOptions = {
+    string: "buildNumber",
+    default: { buildNumber: "unversioned" }
+}
+var options = minimist(process.argv.slice(2), knownOptions);
 
 module.exports.config = config;
 
@@ -199,7 +206,11 @@ gulp.task("Build-Solution", function () {
           nodeReuse: false,
           toolsVersion: config.buildToolsVersion,
           properties: {
-            Platform: config.buildPlatform
+              Platform: config.buildPlatform,
+              RunOctoPack: true, OctoPackEnforceAddingFiles: true,
+              OctoPackPublishPackageToHttp: 'http://localhost:8082/nuget/packages',
+              OctoPackPublishApiKey: 'API-TWIJQZCPGA16Q375LXDCLODL1M',
+              OctoPackPackageVersion: config.buildNumber
           }
         }));
 });
@@ -341,6 +352,7 @@ var xmlpoke = require("xmlpoke");
 /* publish files to temp location */
 gulp.task("Package-Publish", function (callback) {
     config.websiteRoot = path.resolve("./temp");
+    console.log("temp folder is " & config.websiteRoot);
     config.buildConfiguration = "Release";
     fs.mkdirSync(config.websiteRoot);
     runSequence(

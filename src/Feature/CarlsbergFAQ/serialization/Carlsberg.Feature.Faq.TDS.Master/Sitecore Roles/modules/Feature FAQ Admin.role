@@ -1,0 +1,6 @@
+----role----
+name: modules\Feature FAQ Admin
+
+----role-in-role----
+rolename: uk\Project UK Modules Admin
+
