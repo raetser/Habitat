@@ -11,7 +11,8 @@ module.exports = function () {
     buildVerbosity: "minimal",
     buildPlatform: "Any CPU",
     publishPlatform: "AnyCpu",
-    runCleanBuilds: false
+    runCleanBuilds: true,
+    buildNumber: "1.0.0.0"
   };
   return config;
 }
