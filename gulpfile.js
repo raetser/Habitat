@@ -24,7 +24,7 @@ else {
 
 var knownOptions = {
     string: "buildNumber",
-    default: { buildNumber: "1.0.0.8" }
+    default: { buildNumber: "unversioned" }
 }
 var options = minimist(process.argv.slice(2), knownOptions);
 config.buildNumber = options.buildNumber;
