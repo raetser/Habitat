@@ -28,7 +28,7 @@ var knownOptions = {
 }
 var options = minimist(process.argv.slice(2), knownOptions);
 config.buildNumber = options.buildNumber;
-
+console.log("Config.buildNumber = " + config.buildNumber);
 module.exports.config = config;
 
 helix.header("The Habitat source code, tools and processes are examples of Sitecore Helix.", "Habitat is not supported by Sitecore and should be used at your own risk.");
